@@ -188,7 +188,7 @@ map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
 // Dégradé bleu pour PAV (clair → foncé selon population captée)
 function pavColor(val) {
-  const min = 49, max = 440;
+  const min = 51, max = 2472;
   const t = Math.max(0, Math.min(1, (val - min) / (max - min)));
   // #cfe2ff → #6ea8fe → #0d6efd → #052c65
   const stops = [
