@@ -283,7 +283,8 @@ map.on('load', () => {
     const f = e.features[0];
     const p = f.properties;
     const lngLat = f.geometry.coordinates.slice();
-    const pop = p.pop_tot_v3 ?? '—';
+    // On arrondit la valeur dès la récupération
+    const pop = p.pop_tot_v3 ? Math.round(p.pop_tot_v3) : '—';
     const pct = p.pop_tot_v3 && 13492 ? ((p.pop_tot_v3 / 13492) * 100).toFixed(1) : '—';
     const html = `<div class="popup-inner">
       <div class="popup-title">PAV #${p.id_pav}</div>
